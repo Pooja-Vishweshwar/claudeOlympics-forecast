@@ -1,0 +1,8 @@
+# Runtime target: Python 3.11 (see retailcast_config.json).
+# Ranges rather than exact pins: the versions this was developed against
+# (pandas 3.0.2 / numpy 2.4.4) are 3.12-era, so pinning them exactly risks a
+# resolver failure on 3.11. These ranges are the tested-compatible envelope.
+numpy>=1.26,<3
+pandas>=2.1,<4
+scikit-learn>=1.5,<2        # fallback estimator (HistGradientBoosting, poisson loss)
+lightgbm>=4.3,<5            # primary estimator (poisson objective)
